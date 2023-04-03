@@ -1,0 +1,58 @@
+.colorStyle{
+    background-color: rgb(175, 174, 174);
+}
+
+
+.mainImage{
+    width: 100%;
+}
+
+.main{
+    padding: 20px;
+}
+
+.title1{
+    text-align: center;
+    font-size: 30px;
+}
+.title2{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.nameBusiness{
+color: red;
+}
+
+#mision{
+    font-size: 20px;
+}
+
+.diferenciales{
+    background: whitesmoke;
+    padding: 3px;
+}
+
+.title3{
+    text-align: center;
+}
+
+.listDiferenciales{
+    display: inline-block; 
+    vertical-align: top;
+    width: 20%;
+    margin-right: 20%;
+}
+/*display: inline-block;//Para que solo ocupe el espacio de su contenido
+vertical-align: top;//Se alinea con la parte de arriba
+*/
+.items{
+    font-style: italic;
+}
+
+.imagenDiferenciales{
+    width: 50%;
+}

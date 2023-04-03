@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Canvas</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+        
+        //color y tamaño de la pizzarra
+        pincel.fillStyle = "lightblue";
+        pincel.fillRect(0, 0, 600, 400);// relleno el rectángulo
+
+        pincel.fillStyle = "violet";
+        pincel.fillRect(0, 0, 200, 400);
+
+        pincel.fillStyle = "lightgreen";
+        pincel.fillRect(400, 0, 200, 400);
+
+        pincel.fillStyle = "pink";
+        pincel.beginPath(); //comienza un nuevo camino a través de la pizarra
+        pincel.moveTo(300,200); //para que se mueva el pincel
+        pincel.lineTo(200,400);//para que dibuje una línea
+        pincel.lineTo(400,400);//para que dibuje una línea
+        pincel.fill();//rellenar
+
+        pincel.fillStyle="orange";
+        pincel.beginPath();
+        pincel.arc(300, 200, 50, 0, 2 * 3.14);
+        /*para dibujar círculos
+        - los dos primeros valores: posicion inicial donde graficar el círculo, 
+        -el tercer valor: el tamaño del círculo, 
+        -el cuarto valor: el ángulo inicial y 
+        -el último valor: el ángulo final 
+        */
+        pincel.fill();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina</title>
+</head>
+
+<body>
+    <h1>Adivinador de números!!</h1>
+    <h2>Elije el tuyo y probá suerte</h2>
+    <script>
+        function adivinarNumber() {
+            let numPensado = Math.round(Math.random() * 10 + 1);
+            let numLanzado, count = 3,intentos = 1;
+            while (count >= 0) {
+                numLanzado = parseInt(prompt("Ingresá un número del 0 al 10"));
+                if (numLanzado >= 0 && numLanzado <= 10) {
+                    if (numLanzado === numPensado) {
+                        alert("Adivinaste el número es el " + numPensado + " Lo hiciste en el intento nº " + intentos);
+                        break;
+                    } else {
+                        alert("No acertaste.!! Seguí intentado." + " te quedan " + count + " intentos!");
+                    }
+                }
+                intentos++;
+                count--;
+            }
+        }
+        adivinarNumber();
+    </script>
+</body>
+
+</html>

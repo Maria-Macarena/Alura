@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio Familiar</title>
+</head>
+
+<body>
+
+    <h1>Promedio de Edades de los Miembros de la familia </h1>
+
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function promediarEdades(n){
+            let nombre;
+            let edad;
+            let count=0;
+            
+
+            for(let i=1; i<=n;i++){
+                nombre=prompt("Cuál es el nombre del miembro nº "+i);
+                edad=parseInt(prompt("Indicá cuál es su edad: "));
+                count +=edad;
+            }
+
+            imprimir("El promedio de edades de tu familia es: "+ (count / n));    
+        }
+
+        let n= parseInt(prompt("Ingresá la cantidad de miembros que son en tu familia: "));
+        promediarEdades(n);
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

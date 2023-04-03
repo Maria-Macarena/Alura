@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío</title>
+</head>
+<body>
+    <h1>Lotería</h1>
+    <h2>Elige un número y pon tu suerte a correr!</h2>
+    <H4>Tenés 3 intentos.!! </H4>
+    <script>
+        function saltarLinea() {
+            document.write("<br>");
+        }
+    
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+
+        function sortearNums(n,sorteo){
+            
+            
+                if(n === sorteo){
+                imprimir("Felicidades tu número "+ sorteo+ " ,salió sorteado!");
+            }else if(n < sorteo){
+                imprimir("Tu número "+ n+ " , es menor al número sorteado!"+" número sorteado:"+sorteo);
+            }else{
+                imprimir("Tu número "+ n+ " , es mayor al número sorteado!"+" número sorteado:"+sorteo);
+            }
+            
+            
+        }
+
+        let n = parseInt(prompt("Ingresá un número: "));
+        let sorteo = Math.round(Math.random()* n +1);
+        
+
+        sortearNums(n,sorteo); 
+    </script>
+</body>
+</html>

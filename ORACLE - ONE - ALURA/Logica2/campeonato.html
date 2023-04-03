@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntos de la liga</title>
+</head>
+<body>
+    <h1>Tabla de Puntajes</h1>
+    <h2>Campeonato Local</h2>
+
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+    
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function calcularPuntos(ganado,empate){
+            return (ganado*3) + empate;
+            
+        }
+
+        function compararPuntos(puntosTotales,campañaAnterior){
+
+            if(puntosTotales > campañaAnterior ){
+                imprimir("El equipo está mejor que el año pasado!");
+            }else if(puntosTotales < campañaAnterior){
+                imprimir("El equipo está peor que el año pasado!")
+            }else if(puntosTotales === campañaAnterior ){
+                imprimir("El equipo está igual que el año pasado!")
+            }
+
+        }
+
+
+        let nombreEquipo= prompt("Ingrese el nombre del equipo: ");
+        let partidosGanados= parseInt(prompt("Ingrese la cantidad de partidos ganados: "));
+        let partidosEmpatados= parseInt(prompt("Ingrese la cantidad de partidos empatados: "));
+        let totalPuntos= calcularPuntos(partidosGanados,partidosEmpatados);
+        let campañaAnterior = parseInt(prompt("Ingrese los puntos obtenidos en la Campaña Anterior: "));
+
+        imprimir(nombreEquipo+" Acumula "+totalPuntos+" puntos");
+        compararPuntos(totalPuntos,campañaAnterior);
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial FIFA</title>
+</head>
+<body>
+    <H1>Cronología de los años en que se realizó el Mundial FIFA </H1>
+<script>
+    function saltarLineas() {
+        let saltoDeLinea = "<br>";
+        document.write(saltoDeLinea)
+
+    }
+
+    function imprimir(mensaje) {
+
+        saltarLineas();
+        document.write(mensaje);
+        saltarLineas();
+    }
+
+    function calcularAnios(count,anioMundial){
+        
+        i=1;
+        while(count <= anioMundial){
+            imprimir(count+"- Año en que se realizó el mundial nº "+i)
+            count +=4;
+            i++;
+
+        }
+    }
+
+    let count=1930;
+    let anioMundial=parseInt(prompt("Ingresá el año tope para calcular la fecha de los mundiales: "));
+    calcularAnios(count,anioMundial);
+
+
+
+
+</script>
+    
+
+
+
+
+
+</body>
+</html>

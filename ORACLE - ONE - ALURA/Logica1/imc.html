@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de imc</title>
+</head>
+
+<body>
+
+    <h1>Calculadora de imc</h1>
+
+
+  
+    
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+    
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function calcularImc(peso, altura, nombre) {
+            let imc = peso / (altura * altura);
+            imprimir("El índice de masa corporal de " + nombre + " es: " + imc);
+        }
+
+        calcularImc(89, 1.93, "Arthur");
+        calcularImc(99, 1.63, "Ilsa");
+        calcularImc(68, 1.65, "Tom");
+    </script>
+
+
+//Promedio de imc entre dos personas y simplificamos el código
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+            
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function calcularImc(peso, altura) {
+            return (peso / (altura * altura));
+        }
+
+       // imcAdriano = calcularImc(128, 1.65);
+        //imcHelena = calcularImc(97, 1.76);
+
+        imprimir("El promedio entre el imc de Adriano y Helena es: " + (calcularImc(128, 1.65)+ calcularImc(97, 1.76)) / 2);
+    </script>
+
+    //En este fragmento utilizamos prompt para pedir los datos al usuario
+
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+            
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function calcularImc2(peso,altura){
+            return (peso / (altura * altura));
+        }
+
+        nombreInformado= prompt("Ingresa tu nombre:");
+        pesoInformado= prompt(nombreInformado+", Ingresa tu peso:");
+        alturaInformado= prompt(nombreInformado+", Ingresa tu altura:");
+
+        imprimir(nombreInformado+" tu índice de masa corporal es de: "+calcularImc(pesoInformado,alturaInformado));
+
+    </script>
+    
+
+    //consultamos en qué parámetros se encuentra el imc según la OMS
+    <script>
+        function saltarLineas() {
+            let saltoDeLinea = "<br>";
+            document.write(saltoDeLinea)
+            
+        }
+
+        function imprimir(mensaje) {
+
+            saltarLineas();
+            document.write(mensaje);
+            saltarLineas();
+        }
+
+        function calcularImc3(peso,altura){
+            return (peso / (altura * altura));
+        }
+        function consultarParametrosImc(imcFinal,nombreInformado1){
+            if(imcFinal < 18.5){
+                imprimir(nombreInformado1+" tu imc se encuentra en la categoría de Bajo Peso!");
+            }else if(imcFinal >= 18.5 && imcFinal < 25){
+                imprimir(nombreInformado1+" tu imc se encuentra en la categoría de Peso Normal!");
+            }else if(imcFinal >= 25 && imcFinal < 30){
+                imprimir(" tu imc se encuentra en la categoría de Pre-Obesidad!");
+            }else if(imcFinal >=30 && imcFinal < 35){
+                imprimir(nombreInformado1+" tu imc se encuentra en la categoría de Obesidad tipo I! ");
+            }else if(imcFinal >=35 && imcFinal < 40){
+                imprimir(nombreInformado1+" tu imc se encuentra en la categoría de Obesidad tipo II! ");
+            }else if(imcFinal >=40){
+                imprimir(nombreInformado1+" tu imc se encuentra en la categoría de Obesidad tipo III!");
+            }
+
+        }
+        nombreInformado1= prompt("Ingresa tu nombre:");
+        pesoInformado1= prompt(nombreInformado+", Ingresa tu peso:");
+        alturaInformado1= prompt(nombreInformado+", Ingresa tu altura:");
+        imcFinal= calcularImc3(pesoInformado1,alturaInformado1);
+        consultarParametrosImc(imcFinal,nombreInformado1);
+        
+
+
+    </script>
+
+<script>
+    function saltarLineas() {
+        let saltoDeLinea = "<br>";
+        document.write(saltoDeLinea)
+        
+    }
+
+    function imprimir(mensaje) {
+
+        saltarLineas();
+        document.write(mensaje);
+        saltarLineas();
+    }
+
+    function calcularImc3(peso,altura){
+        return (peso / (altura * altura));
+    }
+    function consultarParametrosImc(imcFinal,nombre){
+        if(imcFinal < 18.5){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Bajo Peso!");
+        }else if(imcFinal >= 18.5 && imcFinal < 25){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Peso Normal!");
+        }else if(imcFinal >= 25 && imcFinal < 30){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Pre-Obesidad!");
+        }else if(imcFinal >=30 && imcFinal < 35){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Obesidad tipo I! ");
+        }else if(imcFinal >=35 && imcFinal < 40){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Obesidad tipo II! ");
+        }else if(imcFinal >=40){
+            imprimir(nombre+" tu imc se encuentra en la categoría de Obesidad tipo III!");
+        }
+
+    }
+    let nombre= prompt("Ingresa tu nombre:");
+    let peso= prompt(nombre+", Ingresa tu peso:");
+    let altura= prompt(nombre+", Ingresa tu altura:");
+    let imcFinal= calcularImc3(peso,altura);
+    consultarParametrosImc(imcFinal,nombre);
+    
+
+
+</script>
+
+</body>
+
+</html>

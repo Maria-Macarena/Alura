@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuadra</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        //color y tamaño de la pizzarra
+        pincel.fillStyle = "black";
+        pincel.fillRect(0, 0, 600, 400);
+
+        //Triángulo mayor
+        pincel.fillStyle="yellow";
+        pincel.beginPath();
+        pincel.moveTo(50, 50);
+        pincel.lineTo(50, 400);
+        pincel.lineTo(400, 400);
+        pincel.fill();
+
+        //triángulo menor
+        pincel.fillStyle="black";
+        pincel.beginPath();
+        pincel.moveTo(100, 175);
+        pincel.lineTo(100, 350);
+        pincel.lineTo(275, 350);
+        pincel.fill();
+
+        //reversión mayor I
+        pincel.fillStyle="red";
+        pincel.beginPath();
+        pincel.moveTo(360, 10);
+        pincel.lineTo(200, 200);
+        pincel.lineTo(400, 400);
+        pincel.fill();
+
+        //reversión menor I
+        pincel.fillStyle="black";
+        pincel.beginPath();
+        pincel.moveTo(347, 85);
+        pincel.lineTo(250, 230);
+        pincel.lineTo(394, 388);
+        pincel.fill();
+
+        //reversión mayor II
+        pincel.fillStyle="orange";
+        pincel.beginPath();
+        pincel.moveTo(590, 30);
+        pincel.lineTo(595, 395);
+        pincel.lineTo(380, 200);
+        pincel.fill();
+
+        //reversión mayor II
+        pincel.fillStyle="black";
+        pincel.beginPath();
+        pincel.moveTo(580, 50);
+        pincel.lineTo(555, 335);
+        pincel.lineTo(430, 210);
+        pincel.fill();
+
+    </script>
+</body>
+</html>

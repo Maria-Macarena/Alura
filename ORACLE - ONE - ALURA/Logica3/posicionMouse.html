@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOUSE, DÓNDE ESTAS?</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "lightgray";
+        pincel.fillRect(0, 0, 600, 400);
+
+        /*
+        function alertaClikc(evento) {
+            let x= evento.pageX - pantalla.offsetLeft; //A nuestra pantalla le restamos lo que sobra a la izquierda. Para poder tener las dimensiones reales de la pantalla que creamos con canvas
+            let y= evento.pageY - pantalla.offsetTop;//A nuestra pantalla le restamos lo que sobra en la parte superior. Para poder tener las dimensiones reales de la pantalla que creamos con canvas
+            console.log(evento);
+            alert(x+","+y);
+        }
+
+        pantalla.onclick = alertaClikc;
+        */
+
+        function dibujarCirculo(evento) {
+            let x= evento.pageX - pantalla.offsetLeft; 
+            let y= evento.pageY - pantalla.offsetTop;
+
+            pincel.fillStyle="blue";
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+            console.log(x+","+y);
+        }
+        
+        pantalla.onclick = dibujarCirculo;
+
+    </script>
+</body>
+
+</html>

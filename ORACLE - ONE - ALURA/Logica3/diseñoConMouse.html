@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISEÑOS CON EL MOUSE!</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        let pantalla = document.querySelector('canvas');
+        let pincel = pantalla.getContext('2d');
+
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+
+        let puedoDibujar = false;
+
+        function dibujarCirculo(evento) {
+            if (puedoDibujar) {
+                let x = evento.pageX - pantalla.offsetLeft;
+                let y = evento.pageY - pantalla.offsetTop;
+                pincel.fillStyle = 'blue';
+                pincel.beginPath();
+                pincel.arc(x, y, 5, 0, 2 * 3.14);
+                pincel.fill();
+            }
+        }
+
+        pantalla.onmousemove = dibujarCirculo;
+
+        function habilitarDibujar() {
+            puedoDibujar = true;
+        }
+
+        function deshabilitarDibujar() {
+            puedoDibujar = false;
+        }
+
+        pantalla.onmousedown = habilitarDibujar;
+        pantalla.onmouseup = deshabilitarDibujar;
+    </script>
+</body>
+
+</html>
+
+/*
+La condición está asociada a si el botón izquierdo del mouse está o no siendo presionado.
+Siendo así declaramos una variable booleana llamada puedoDibujar que comienza como false. Esa variable será utilizada por la función dibujarCirculo para saber si debe o no diseñar.
+En el código habrás visto tres eventos nuevos que estamos usando, ellos son onmousemove, onmousedown y onmouseup, donde el primero permite capturar el movimiento del mouse, el segundo sirve para ejecutar un código cuando el mouse está presionado y el tercero cuando el botón del mouse es soltado. Entonces, asociamos el primer evento a la función para dibujar circulo: pantalla.onmousemove = dibujarCirculo. Además, creamos dos funciones habilitarDibujar y deshabilitarDibujar y asociamos respectivamente cada función con los eventos del mouse onmousedown y onmouseup. Dentro de las funciones, lo que hacemos es atribuir la variable puedoDibujar para true cuando queremos habilitarDibujar y vuelve para false cuando queremos deshabilitarDibujar.
+*/

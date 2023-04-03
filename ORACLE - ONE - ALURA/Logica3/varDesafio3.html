@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="620" height="420"></canvas>
+
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        var puedoDibujar = false;
+        var index = 2;
+        var colores = [
+            "yellow",
+            "red",
+            "blue",
+            "green",
+            "orange",
+            "violet",
+            "chartreuse",
+            "springGreen",
+            "blueViolet",
+            "mediumVioletRed",
+            "orangeRed",
+            "gold",
+        ];
+
+        // Se pinta el canvas de color Gris.
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0, 0, 620, 420);
+        pincel.fillStyle = "black";
+        pincel.strokeRect(0, 0, 620, 420);
+
+        // Se pinta la pizarra de dibujo de Blanco.
+        pincel.fillStyle = "white";
+        pincel.fillRect(10, 10, 600, 400);
+        pincel.fillStyle = "black";
+        pincel.strokeRect(10, 10, 600, 400);
+
+        function dibujarCirculo(evento) {
+            if (puedoDibujar) {
+                var x = evento.pageX - pantalla.offsetLeft;
+                var y = evento.pageY - pantalla.offsetTop;
+
+                if (x >= 15 && x <= 605 && y <= 405 && y >= 15) {
+                    if (y < 40 && x < 315) {} else {
+                        pincel.fillStyle = colores[index];
+                        pincel.beginPath();
+                        pincel.arc(x, y, 5, 0, 2 * 3.14);
+                        pincel.fill();
+                    }
+                }
+            }
+        }
+
+        function mostrarPaleta() {
+            var x = 10;
+            var y = 10;
+            var i = 0;
+            while (i < colores.length) {
+                dibujarRectangulo(x, y, 25, 25, colores[i]);
+                x = x + 25;
+                i++;
+            }
+        }
+
+        function dibujarRectangulo(x, y, base, altura, color) {
+            pincel.fillStyle = color;
+            pincel.fillRect(x, y, base, altura);
+            pincel.fillStyle = "black";
+            pincel.strokeRect(x, y, base, altura);
+        }
+
+        function habilitarDibujar() {
+            puedoDibujar = true;
+        }
+
+        function deshabilitarDibujar() {
+            puedoDibujar = false;
+        }
+
+        function asignarColor(evento) {
+            var xColor = evento.pageX - pantalla.offsetLeft;
+            var yColor = evento.pageY - pantalla.offsetTop;
+            var minimo = 10;
+            var maximo = 35;
+
+            if (yColor >= 10 && yColor <= 35) {
+                for (j = 0; j < colores.length; j++) {
+                    if (xColor >= minimo && xColor < maximo) {
+                        index = j;
+                    }
+                    minimo = minimo + 25;
+                    maximo = maximo + 25;
+                }
+            }
+        }
+
+        mostrarPaleta();
+        pantalla.onmousemove = dibujarCirculo;
+        pantalla.onmousedown = habilitarDibujar;
+        pantalla.onmouseup = deshabilitarDibujar;
+        pantalla.onclick = asignarColor;
+    </script>
+</body>
+
+</html>

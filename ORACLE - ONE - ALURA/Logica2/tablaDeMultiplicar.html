@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Multiplicar</title>
+</head>
+<body>
+    <h1>Tablas de Multiplicar.!</h1>
+
+    <script>
+        function saltarLineas() {
+        let saltoDeLinea = "<br>";
+        document.write(saltoDeLinea)
+
+    }
+
+    function imprimir(mensaje) {
+
+        saltarLineas();
+        document.write(mensaje);
+        saltarLineas();
+    }
+
+    function multiplicar(n,limite){
+        let resultado=n;
+        for(i=1;i<=limite;i++){
+        resultado = n* i;
+        imprimir(n+" x "+i+" = "+resultado);
+        }
+    }
+
+
+    let n=parseInt(prompt("Ingresá el número para multiplicar: "));
+    let limite=parseInt(prompt("Ingresá el número límite hasta donde se va a multiplicar: "));
+
+    multiplicar(n,limite); 
+
+
+    </script>
+</body>
+</html>
